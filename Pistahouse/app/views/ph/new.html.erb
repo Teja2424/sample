@@ -1,0 +1,7 @@
+<h1>Thanks for placing the order</h1><br>
+<%= o.id %>
+	Name: <%= o.name %><br>
+	PhoneNumber: <%= o.phonenum%><br>
+	Address: <%= o.address%><br>
+	<%= link_to "Delete", {:action=>'delete', :id=>o.id}, class:"btn btn-primary btn-lg"%><br>
+	<%end%>

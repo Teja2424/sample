@@ -1,0 +1,35 @@
+  <div class="card-footer text-muted">
+    
+  </div>
+</div>
+<% Section.all.each do |section| %>
+<%= link_to section, pistahouseinfo_menu_path(section: section), class:"btn btn-primary btn-lg"%>
+<%end%>
+
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Description</th>
+      <th scope="col">Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <% @fooditem.each do |i|%>
+      <td><%= i.id %></td>
+      <td><%= i.name%></td>
+      <td><%= i.price%></td>
+      <td><%= i.description%></td>
+      <td><%=image_tag i.image.url(:thumb)%></td>
+
+      <td><%= link_to "show", {:action=>'show', :id=>i.id}, class:"btn btn-primary btn-lg"%></td>
+      <td><%= link_to "Edit", {:action=>'edit', :id=>i.id}, class:"btn btn-primary btn-lg"%></td>
+      <td><%= link_to "Place order", {:action=>'place', :id=>i.id}, class:"btn btn-primary btn-lg"%></td>
+    </tr>
+    <%end%>
+    
+  </tbody>
+</table>

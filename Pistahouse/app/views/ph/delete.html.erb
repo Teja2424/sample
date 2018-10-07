@@ -1,0 +1,6 @@
+<%= form_for(:ord, url:{:action=>'destroy', :id=>@ord.id}) do |f|%>
+<h1> Are you sure you want to delete the order </h1>
+<div class="actions">
+    <%= f.submit %>
+  </div>
+  <%end%>
